@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { startReveal } from './reveal';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -8,6 +10,7 @@ import { Join } from './components/Join';
 import { Footer } from './components/Footer';
 
 export function App() {
+  useEffect(() => startReveal(), []);
   return (
     <>
       <a className="skip" href="#main">

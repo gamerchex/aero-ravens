@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { photos, Photo, photoSources, type PhotoGroup } from './Photo';
+import { photos, Photo, photoSources, type PhotoGroup, type PhotoInfo } from './Photo';
 import { links } from '../data/site';
 
 const filters: { key: 'all' | PhotoGroup; label: string }[] = [
@@ -11,46 +11,90 @@ const filters: { key: 'all' | PhotoGroup; label: string }[] = [
 
 const INITIAL = 16;
 
+function columnsFor(width: number) {
+  if (width <= 600) return 2;
+  if (width <= 1000) return 3;
+  return 4;
+}
+
+function useColumnCount() {
+  const [cols, setCols] = useState(() => (typeof window === 'undefined' ? 4 : columnsFor(window.innerWidth)));
+  useEffect(() => {
+    const onResize = () => setCols(columnsFor(window.innerWidth));
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+  return cols;
+}
+
+/**
+ * Puts each photo in the currently shortest column, in order. Because it only ever appends,
+ * the first photos keep their spots when more are shown.
+ */
+function toColumns(items: PhotoInfo[], count: number) {
+  const cols: { p: PhotoInfo; i: number }[][] = Array.from({ length: count }, () => []);
+  const heights = new Array(count).fill(0);
+  items.forEach((p, i) => {
+    const { width, height } = photoSources(p.id);
+    let c = 0;
+    for (let k = 1; k < count; k++) if (heights[k] < heights[c] - 0.01) c = k;
+    cols[c].push({ p, i });
+    heights[c] += height / width + 0.04;
+  });
+  return cols;
+}
+
 export function Gallery() {
   const [filter, setFilter] = useState<(typeof filters)[number]['key']>('all');
   const [active, setActive] = useState<number | null>(null);
-  const [showAll, setShowAll] = useState(false);
+  const [expanded, setExpanded] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const lastTrigger = useRef<HTMLButtonElement | null>(null);
-  const gridRef = useRef<HTMLUListElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
   const [clipHeight, setClipHeight] = useState<number | null>(null);
+  const [opening, setOpening] = useState(false);
+  const colCount = useColumnCount();
 
   const items = useMemo(
     () => photos.filter((p) => p.gallery && (filter === 'all' || p.group === filter)),
     [filter],
   );
+  const columns = useMemo(() => toColumns(items, colCount), [items, colCount]);
 
-  const collapsed = !showAll && items.length > INITIAL;
+  const collapsible = items.length > INITIAL;
+  const collapsed = collapsible && !expanded;
   const hiddenCount = items.length - INITIAL;
 
-  // While collapsed, cut the grid at the bottom of its shortest column so it ends on an even line.
+  // While collapsed, cut the grid just above the first photo past the preview in each column,
+  // so the preview ends on an even line.
   useLayoutEffect(() => {
     const grid = gridRef.current;
-    if (!collapsed || !grid) {
+    if (!collapsible || !grid) {
       setClipHeight(null);
       return;
     }
     const measure = () => {
       const top = grid.getBoundingClientRect().top;
-      const columnBottoms = new Map<number, number>();
-      grid.querySelectorAll<HTMLElement>('.masonry__item').forEach((el) => {
-        const r = el.getBoundingClientRect();
-        const col = Math.round(r.left);
-        columnBottoms.set(col, Math.max(columnBottoms.get(col) ?? 0, r.bottom - top));
+      let line = Infinity;
+      grid.querySelectorAll<HTMLElement>('.masonry__col').forEach((col) => {
+        const shown = [...col.querySelectorAll<HTMLElement>('.masonry__item')].filter(
+          (el) => Number(el.dataset.i) < INITIAL,
+        );
+        const last = shown[shown.length - 1];
+        if (last) line = Math.min(line, last.getBoundingClientRect().bottom - top);
       });
-      const shortest = Math.min(...columnBottoms.values());
-      setClipHeight(Number.isFinite(shortest) ? Math.round(shortest * 0.82) : null);
+      setClipHeight(Number.isFinite(line) ? Math.round(line) : null);
     };
     measure();
     const ro = new ResizeObserver(measure);
     ro.observe(grid);
     return () => ro.disconnect();
-  }, [collapsed, items]);
+  }, [collapsible, columns]);
+
+  const expand = () => {
+    setOpening(true);
+    setExpanded(true);
+  };
 
   const open = (i: number, el: HTMLButtonElement) => {
     lastTrigger.current = el;
@@ -119,28 +163,48 @@ export function Gallery() {
         </div>
 
         <div
-          className={`masonry-wrap${collapsed ? ' is-collapsed' : ''}`}
-          style={collapsed && clipHeight ? { maxHeight: clipHeight } : undefined}
+          className={`masonry-wrap${collapsed ? ' is-collapsed' : ''}${opening ? ' is-opening' : ''}`}
+          style={
+            collapsed && clipHeight
+              ? { maxHeight: clipHeight }
+              : opening && gridRef.current
+                ? { maxHeight: gridRef.current.scrollHeight }
+                : undefined
+          }
+          onTransitionEnd={(e) => e.propertyName === 'max-height' && setOpening(false)}
         >
-        <ul className="masonry" ref={gridRef}>
-          {(showAll ? items : items.slice(0, INITIAL)).map((p, i) => (
-            <li key={p.id} className="masonry__item">
-              <button type="button" className="masonry__btn" onClick={(e) => open(i, e.currentTarget)}>
-                <Photo id={p.id} sizes="(max-width: 600px) 50vw, (max-width: 1000px) 33vw, 25vw" />
-                <span className="visually-hidden">Open larger view: {p.caption}</span>
-              </button>
-            </li>
-          ))}
-        </ul>
-        {collapsed && (
-          <div className="gallery__more">
-            <button type="button" className="more-btn" onClick={() => setShowAll(true)}>
-              <span className="more-btn__plus" aria-hidden="true" />
-              <span className="more-btn__label">View more photos</span>
-              <span className="more-btn__count">+{hiddenCount}</span>
-            </button>
+          <div className="masonry" ref={gridRef} style={{ '--cols': colCount } as React.CSSProperties}>
+            {columns.map((col, c) => (
+              <ul className="masonry__col" key={c}>
+                {col.map(({ p, i }) => {
+                  const hidden = collapsed && i >= INITIAL;
+                  return (
+                    <li key={p.id} className="masonry__item" data-i={i} style={{ '--d': `${(c % 4) * 70}ms` } as React.CSSProperties}>
+                      <button
+                        type="button"
+                        className="masonry__btn"
+                        onClick={(e) => open(i, e.currentTarget)}
+                        tabIndex={hidden ? -1 : undefined}
+                        aria-hidden={hidden || undefined}
+                      >
+                        <Photo id={p.id} sizes="(max-width: 600px) 50vw, (max-width: 1000px) 33vw, 25vw" />
+                        <span className="visually-hidden">Open larger view: {p.caption}</span>
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
+            ))}
           </div>
-        )}
+          {collapsed && (
+            <div className="gallery__more">
+              <button type="button" className="more-btn" onClick={expand}>
+                <span className="more-btn__plus" aria-hidden="true" />
+                <span className="more-btn__label">View more photos</span>
+                <span className="more-btn__count">+{hiddenCount}</span>
+              </button>
+            </div>
+          )}
         </div>
       </div>
 
