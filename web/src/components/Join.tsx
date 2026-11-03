@@ -35,6 +35,8 @@ export function Join() {
                 </li>
               ))}
             </ol>
+
+            <Figure id="club-day" n="16" sizes="(max-width: 900px) 100vw, 55vw" className="join__fig" />
           </div>
 
           <aside className="join__card" aria-label="How to join">
@@ -56,7 +58,6 @@ export function Join() {
           </aside>
         </div>
 
-        <Figure id="club-day" n="16" sizes="(max-width: 900px) 100vw, 80vw" className="join__fig" />
       </div>
     </section>
   );

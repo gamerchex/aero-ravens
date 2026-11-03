@@ -1268,8 +1268,11 @@ button {
   text-decoration-color: var(--red);
 }
 .join__fig {
-  margin-top: clamp(56px, 8vw, 104px);
-  --ar: 21 / 9;
+  margin-top: 40px;
+  --ar: 4096 / 3188; /* the photo's own shape, so nothing is cropped */
+}
+.join__fig .fig__cap {
+  max-width: none;
 }
 
 @media (max-width: 899px) {
@@ -1284,9 +1287,6 @@ button {
   }
   .expect__v {
     grid-column: 2;
-  }
-  .join__fig {
-    --ar: 4 / 3;
   }
 }
 
