@@ -334,7 +334,7 @@ p + p,
   color: var(--on-ink);
   display: grid;
   grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
-  min-height: min(88vh, 780px);
+  align-items: center;
 }
 .hero__text {
   align-self: center;
@@ -363,14 +363,13 @@ p + p,
 }
 .hero__media {
   position: relative;
-  min-height: 420px;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
 }
 .hero__media img {
-  position: absolute;
-  inset: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
 }
 .hero__cap {
   position: absolute;
@@ -388,8 +387,6 @@ p + p,
   }
   .hero__media {
     order: -1;
-    min-height: 0;
-    aspect-ratio: 4 / 3;
   }
   .hero__text {
     padding: 32px var(--gutter) 44px;
@@ -517,12 +514,8 @@ p + p,
   gap: clamp(12px, 1.6vw, 20px);
   align-items: start;
 }
-.rs--b {
-  --ar: 3 / 4;
-}
 .rs--c {
-  --ar: 3 / 4;
-  margin-top: clamp(24px, 6vw, 72px);
+  margin-top: clamp(24px, 4vw, 48px);
 }
 @media (max-width: 899px) {
   .result,
@@ -549,21 +542,21 @@ p + p,
 
 /* ---------- Practice ---------- */
 
-.practice {
-  padding-top: 0;
+.practice__intro {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
 }
-.practice__banner {
-  height: clamp(260px, 38vw, 520px);
-  overflow: hidden;
-  background: var(--ink-2);
+.practice__intro p {
+  color: #cfd0ce;
+  max-width: 46ch;
 }
-.practice__banner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.practice__sub {
+  margin-top: 28px;
 }
-.practice__title {
-  margin-top: clamp(40px, 5vw, 64px);
+.h2 + .practice__sub {
+  margin-top: 24px;
 }
 .practice__cols {
   margin-top: 28px;
@@ -606,12 +599,8 @@ p + p,
   gap: 12px;
   align-items: start;
 }
-.practice__pair .fig:first-child {
-  --ar: 3 / 4;
-}
-.practice__pair .fig:last-child {
-  --ar: 3 / 4;
-  margin-top: 48px;
+.practice__pair {
+  grid-template-columns: minmax(0, 1fr);
 }
 .camp {
   margin-top: clamp(56px, 7vw, 96px);
@@ -626,7 +615,7 @@ p + p,
   max-width: 44ch;
 }
 @media (max-width: 899px) {
-  .practice__cols,
+  .practice__intro,
   .practice__log,
   .camp {
     grid-template-columns: minmax(0, 1fr);
@@ -874,9 +863,6 @@ p + p,
   color: var(--on-paper);
   text-underline-offset: 3px;
   overflow-wrap: anywhere;
-}
-.join__fig {
-  --ar: 4096 / 3188; /* the photo's own shape, so nothing is cropped */
 }
 @media (max-width: 899px) {
   .join__grid {

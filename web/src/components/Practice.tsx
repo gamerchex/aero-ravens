@@ -1,29 +1,23 @@
-import { Figure, Photo } from './Photo';
+import { Figure } from './Photo';
 import { season } from '../data/site';
 
 export function Practice() {
   return (
     <section className="section section--ink practice" aria-labelledby="practice-title" id="practice">
-      <div className="practice__banner">
-        <Photo id="pilots-line" sizes="100vw" />
-      </div>
-
       <div className="wrap">
-        <h2 id="practice-title" className="h2 practice__title">
-          Practice
-        </h2>
-
-        <div className="practice__cols">
+        <div className="practice__intro">
+          <Figure id="pilots-line" sizes="(max-width: 900px) 100vw, 58vw" className="practice__fig" />
           <div>
-            <h3 className="h4">Piloting</h3>
+            <h2 id="practice-title" className="h2">
+              Practice
+            </h2>
+            <h3 className="h4 practice__sub">Piloting</h3>
             <p>
               Pilots spend most of practice on the teamwork field: take off, go through the gates and keyholes, land,
               repeat. In a match you share the field with another team's drone, so a lot of it is talking to each other
               and staying out of each other's way.
             </p>
-          </div>
-          <div>
-            <h3 className="h4">Autonomous</h3>
+            <h3 className="h4 practice__sub">Autonomous</h3>
             <p>
               The autonomous group programs the drones in Python. It starts with single commands like take off, move and
               land, and builds up to full routines for the skills field that get run, adjusted and run again.

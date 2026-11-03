@@ -69,8 +69,12 @@ export function Figure({
   caption = true,
 }: Props & { showDate?: boolean; caption?: boolean }) {
   const p = getPhoto(id);
+  const s = photoSources(id);
   return (
-    <figure className={`fig ${className ?? ''}`}>
+    <figure
+      className={`fig ${className ?? ''}`}
+      style={{ '--ar': `${s.width} / ${s.height}` } as React.CSSProperties}
+    >
       <div className="fig__frame">
         <Photo id={id} sizes={sizes} eager={eager} />
       </div>
