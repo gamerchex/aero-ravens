@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { photos, Photo, photoSources, type PhotoGroup } from './Photo';
 import { SectionHead } from './SectionHead';
 
@@ -17,11 +17,40 @@ export function Gallery() {
   const [showAll, setShowAll] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const lastTrigger = useRef<HTMLButtonElement | null>(null);
+  const gridRef = useRef<HTMLUListElement>(null);
+  const [clipHeight, setClipHeight] = useState<number | null>(null);
 
   const items = useMemo(
     () => photos.filter((p) => p.gallery && (filter === 'all' || p.group === filter)),
     [filter],
   );
+
+  const collapsed = !showAll && items.length > INITIAL;
+  const hiddenCount = items.length - INITIAL;
+
+  // While collapsed, cut the grid at the bottom of its shortest column so it ends on an even line.
+  useLayoutEffect(() => {
+    const grid = gridRef.current;
+    if (!collapsed || !grid) {
+      setClipHeight(null);
+      return;
+    }
+    const measure = () => {
+      const top = grid.getBoundingClientRect().top;
+      const columnBottoms = new Map<number, number>();
+      grid.querySelectorAll<HTMLElement>('.masonry__item').forEach((el) => {
+        const r = el.getBoundingClientRect();
+        const col = Math.round(r.left);
+        columnBottoms.set(col, Math.max(columnBottoms.get(col) ?? 0, r.bottom - top));
+      });
+      const shortest = Math.min(...columnBottoms.values());
+      setClipHeight(Number.isFinite(shortest) ? Math.round(shortest * 0.82) : null);
+    };
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(grid);
+    return () => ro.disconnect();
+  }, [collapsed, items]);
 
   const open = (i: number, el: HTMLButtonElement) => {
     lastTrigger.current = el;
@@ -83,7 +112,11 @@ export function Gallery() {
           </span>
         </div>
 
-        <ul className="masonry">
+        <div
+          className={`masonry-wrap${collapsed ? ' is-collapsed' : ''}`}
+          style={collapsed && clipHeight ? { maxHeight: clipHeight } : undefined}
+        >
+        <ul className="masonry" ref={gridRef}>
           {(showAll ? items : items.slice(0, INITIAL)).map((p, i) => (
             <li key={p.id} className="masonry__item">
               <button type="button" className="masonry__btn" onClick={(e) => open(i, e.currentTarget)}>
@@ -97,13 +130,16 @@ export function Gallery() {
             </li>
           ))}
         </ul>
-        {!showAll && items.length > INITIAL && (
+        {collapsed && (
           <div className="gallery__more">
-            <button type="button" className="btn btn--ghost" onClick={() => setShowAll(true)}>
-              Show all {items.length} photos
+            <button type="button" className="more-btn" onClick={() => setShowAll(true)}>
+              <span className="more-btn__plus" aria-hidden="true" />
+              <span className="more-btn__label">View more photos</span>
+              <span className="more-btn__count">+{hiddenCount}</span>
             </button>
           </div>
         )}
+        </div>
       </div>
 
       <dialog
