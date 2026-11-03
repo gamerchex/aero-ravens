@@ -712,12 +712,8 @@ p + p,
 .masonry-wrap {
   position: relative;
 }
-.masonry-wrap.is-collapsed,
-.masonry-wrap.is-opening {
+.masonry-wrap.is-collapsed {
   overflow: hidden;
-}
-.masonry-wrap.is-opening {
-  transition: max-height 0.9s cubic-bezier(0.65, 0, 0.25, 1);
 }
 .gallery__more {
   position: absolute;
@@ -972,9 +968,8 @@ p + p,
   }
   /* photos only fade in, no movement */
   [data-reveal='fade'] {
-    opacity: 0;
-    transition: opacity 0.9s ease;
-    transition-delay: var(--d, 0ms);
+    opacity: 0.55;
+    transition: opacity 0.5s ease;
   }
   [data-reveal].is-in {
     opacity: 1;

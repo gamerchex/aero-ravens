@@ -52,7 +52,6 @@ export function Gallery() {
   const lastTrigger = useRef<HTMLButtonElement | null>(null);
   const gridRef = useRef<HTMLDivElement>(null);
   const [clipHeight, setClipHeight] = useState<number | null>(null);
-  const [opening, setOpening] = useState(false);
   const colCount = useColumnCount();
 
   const items = useMemo(
@@ -91,10 +90,7 @@ export function Gallery() {
     return () => ro.disconnect();
   }, [collapsible, columns]);
 
-  const expand = () => {
-    setOpening(true);
-    setExpanded(true);
-  };
+  const expand = () => setExpanded(true);
 
   const open = (i: number, el: HTMLButtonElement) => {
     lastTrigger.current = el;
@@ -163,15 +159,8 @@ export function Gallery() {
         </div>
 
         <div
-          className={`masonry-wrap${collapsed ? ' is-collapsed' : ''}${opening ? ' is-opening' : ''}`}
-          style={
-            collapsed && clipHeight
-              ? { maxHeight: clipHeight }
-              : opening && gridRef.current
-                ? { maxHeight: gridRef.current.scrollHeight }
-                : undefined
-          }
-          onTransitionEnd={(e) => e.propertyName === 'max-height' && setOpening(false)}
+          className={`masonry-wrap${collapsed ? ' is-collapsed' : ''}`}
+          style={collapsed && clipHeight ? { maxHeight: clipHeight } : undefined}
         >
           <div className="masonry" ref={gridRef} style={{ '--cols': colCount } as React.CSSProperties}>
             {columns.map((col, c) => (
@@ -179,7 +168,7 @@ export function Gallery() {
                 {col.map(({ p, i }) => {
                   const hidden = collapsed && i >= INITIAL;
                   return (
-                    <li key={p.id} className="masonry__item" data-i={i} style={{ '--d': `${(c % 4) * 70}ms` } as React.CSSProperties}>
+                    <li key={p.id} className="masonry__item" data-i={i} >
                       <button
                         type="button"
                         className="masonry__btn"
