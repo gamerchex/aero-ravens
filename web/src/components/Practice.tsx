@@ -37,10 +37,7 @@ export function Practice() {
               ))}
             </ol>
           </div>
-          <div className="practice__pair">
-            <Figure id="coding-screen" sizes="(max-width: 900px) 50vw, 22vw" />
-            <Figure id="landing-pad" sizes="(max-width: 900px) 50vw, 22vw" />
-          </div>
+          <Figure id="coding-screen" sizes="(max-width: 900px) 100vw, 40vw" className="practice__side" />
         </div>
 
         <div className="camp">

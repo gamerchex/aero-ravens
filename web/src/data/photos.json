@@ -124,7 +124,8 @@
   "caption": "Practice field",
   "date": "Oct 22, 2026",
   "group": "practice",
-  "pos": "50% 70%"
+  "pos": "50% 70%",
+  "gallery": true
  },
  {
   "id": "field-carry",
