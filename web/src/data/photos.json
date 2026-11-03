@@ -1,0 +1,425 @@
+[
+ {
+  "id": "hero-gate",
+  "src": "images/aeroravens3.jpeg",
+  "alt": "An Aero Ravens member leans in to watch a drone line up with a red Aerial Drone Competition arch on the competition floor.",
+  "caption": "Lining up an arch on the competition floor",
+  "date": "2026 West Aerial Drone HS Championship",
+  "group": "competition",
+  "pos": "38% 50%"
+ },
+ {
+  "id": "field-build",
+  "src": "images/instagram/2026-09-22_DdnG0kbm7IM_06.jpg",
+  "alt": "Two members fit a competition gate onto its stand at a classroom workbench.",
+  "caption": "Putting this year's teamwork field together",
+  "date": "Sept 22, 2026",
+  "group": "practice",
+  "pos": "55% 45%"
+ },
+ {
+  "id": "banner-pilots",
+  "src": "images/instagram/2026-09-01_DcxMU74lJt4_03.jpg",
+  "alt": "Two members fly drones from their seats under a banner reading High School West Region Skills Missions Champion.",
+  "caption": "Week 2, under last year's banner",
+  "date": "Sept 1, 2026",
+  "group": "practice",
+  "pos": "14% 50%"
+ },
+ {
+  "id": "team-flag",
+  "src": "images/instagram/2026-05-01_DX0hJAcFK5q_03.jpg",
+  "alt": "Six Aero Ravens members hold a red Canyon Crest Academy Ravens flag in the competition hall.",
+  "caption": "Teams 5951A and 5951B",
+  "date": "2026 West Aerial Drone HS Championship",
+  "group": "competition",
+  "pos": "50% 55%"
+ },
+ {
+  "id": "team-awards",
+  "src": "images/aeroravens6.jpeg",
+  "alt": "Six team members in black Aero Ravens shirts stand in front of a San Diego Parks and Recreation backdrop, two of them holding awards.",
+  "caption": "Second place, teamwork",
+  "date": "2026 West Aerial Drone HS Championship",
+  "group": "competition",
+  "pos": "50% 60%"
+ },
+ {
+  "id": "team-backs",
+  "src": "images/instagram/2026-05-01_DX0g6ihFI5d_02.jpg",
+  "alt": "Team members seen from behind in matching black shirts printed 5951 Aero Ravens.",
+  "caption": "5951 on every back",
+  "date": "2026 West Aerial Drone HS Championship",
+  "group": "competition",
+  "pos": "50% 50%"
+ },
+ {
+  "id": "comp-field",
+  "src": "images/aeroravens5.jpeg",
+  "alt": "Two Aero Ravens pilots stand at the edge of a competition field marked out with gates, keyholes and a striped landing ramp.",
+  "caption": "On the field",
+  "date": "2026 West Aerial Drone HS Championship",
+  "group": "competition",
+  "pos": "55% 60%"
+ },
+ {
+  "id": "comp-pits",
+  "src": "images/aeroravens2.jpeg",
+  "alt": "Three members crowd around a laptop at the team's table in a busy competition hall.",
+  "caption": "Last-minute code in the pits",
+  "date": "2026 West Aerial Drone HS Championship",
+  "group": "competition",
+  "pos": "45% 50%"
+ },
+ {
+  "id": "trophy-2025",
+  "src": "images/instagram/2025-04-18_DImxYmQzI09_01.jpg",
+  "alt": "A black X-shaped Aerial Drone Championship trophy engraved High School Skills Missions Champion.",
+  "caption": "Skills Mission Champion award",
+  "date": "2025 National West",
+  "group": "competition",
+  "pos": "50% 50%"
+ },
+ {
+  "id": "team-2025",
+  "src": "images/instagram/2025-04-18_DImxYmQzI09_04.jpg",
+  "alt": "Three members in black Drone Championship shirts talk at the edge of the field.",
+  "caption": "Between runs",
+  "date": "2025 National West",
+  "group": "competition",
+  "pos": "55% 45%"
+ },
+ {
+  "id": "team-2025-b",
+  "src": "images/instagram/2025-04-18_DImxYmQzI09_02.jpg",
+  "alt": "Three team members stand by the gates in a competition venue.",
+  "caption": "Competition day",
+  "date": "2025 National West",
+  "group": "competition",
+  "pos": "50% 50%",
+  "gallery": true
+ },
+ {
+  "id": "pilots-line",
+  "src": "images/instagram/2026-10-15_Deigo-uG8jy_01.jpg",
+  "alt": "Five pilots stand in a row with controllers, flying over a taped-out practice field.",
+  "caption": "Teamwork practice",
+  "date": "Oct 15, 2026",
+  "group": "practice",
+  "pos": "50% 55%"
+ },
+ {
+  "id": "coding-screen",
+  "src": "images/instagram/2026-10-15_Deigo-uG8jy_03.jpg",
+  "alt": "Over the shoulder of a member writing a flight program on a desktop computer.",
+  "caption": "Autonomous group, working on code",
+  "date": "Oct 15, 2026",
+  "group": "practice",
+  "pos": "55% 45%"
+ },
+ {
+  "id": "landing-pad",
+  "src": "images/instagram/2026-10-22_De0SiRJmRm6_03.jpg",
+  "alt": "A small drone sits on a red landing pad on a camouflage practice mat, with taped lanes and field pieces around it.",
+  "caption": "Practice field, close up",
+  "date": "Oct 22, 2026",
+  "group": "practice",
+  "pos": "50% 70%"
+ },
+ {
+  "id": "field-carry",
+  "src": "images/instagram/2026-09-22_DdnG0kbm7IM_05.jpg",
+  "alt": "Members carry long field pieces across the classroom while setting up a practice field.",
+  "caption": "Moving the field",
+  "date": "Sept 22, 2026",
+  "group": "practice",
+  "pos": "50% 50%"
+ },
+ {
+  "id": "camp-group",
+  "src": "images/aeroravens7.jpg",
+  "alt": "A group of campers and Aero Ravens members pose together in a classroom set up with competition gates.",
+  "caption": "Summer camp",
+  "date": "July 2026",
+  "group": "camp",
+  "pos": "50% 45%"
+ },
+ {
+  "id": "camp-code",
+  "src": "images/instagram/2026-07-27_DbUwu2RlKCj_05.jpg",
+  "alt": "Two students at a computer write code while competition gates stand in the background.",
+  "caption": "Camp coding session",
+  "date": "July 2026",
+  "group": "camp",
+  "pos": "50% 50%"
+ },
+ {
+  "id": "club-day",
+  "src": "images/instagram/2026-09-23_DdqG2U9xQPH_01.jpg",
+  "alt": "Members stand behind an Aero Ravens poster board and a table of drones at a school club fair.",
+  "caption": "Club Day",
+  "date": "Sept 23, 2026",
+  "group": "camp",
+  "pos": "50% 72%"
+ },
+ {
+  "id": "g-robolink",
+  "src": "images/aeroravens1.jpeg",
+  "alt": "Team members pose in front of a Robolink backdrop with a camera on a tripod in the foreground.",
+  "caption": "At the Robolink booth",
+  "date": "2026 West Aerial Drone HS Championship",
+  "group": "competition",
+  "pos": "50% 40%",
+  "gallery": true
+ },
+ {
+  "id": "g-hall",
+  "src": "images/instagram/2026-05-01_DX0hJAcFK5q_02.jpg",
+  "alt": "A crowded competition hall full of team tables and gates.",
+  "caption": "The pits",
+  "date": "2026 West Aerial Drone HS Championship",
+  "group": "competition",
+  "pos": "50% 50%",
+  "gallery": true
+ },
+ {
+  "id": "g-arch",
+  "src": "images/instagram/2026-05-01_DX0hJAcFK5q_04.jpg",
+  "alt": "Members walk past a large red Aerial Drone Competition arch on the venue floor.",
+  "caption": "Arch at the venue",
+  "date": "2026 West Aerial Drone HS Championship",
+  "group": "competition",
+  "pos": "40% 50%",
+  "gallery": true
+ },
+ {
+  "id": "g-watch",
+  "src": "images/aeroravens4.jpeg",
+  "alt": "Two team members watch a match from beside a blue competition arch.",
+  "caption": "Watching a match",
+  "date": "2026 West Aerial Drone HS Championship",
+  "group": "competition",
+  "pos": "60% 50%",
+  "gallery": true
+ },
+ {
+  "id": "g-jan-1",
+  "src": "images/instagram/2026-01-11_DTYWXtpkjAj_03.jpg",
+  "alt": "A member sits on the gym floor with a laptop beside a competition arch while teammates look on.",
+  "caption": "Competition day",
+  "date": "Jan 2026",
+  "group": "competition",
+  "pos": "50% 60%",
+  "gallery": true
+ },
+ {
+  "id": "g-jan-2",
+  "src": "images/instagram/2026-01-11_DTYWXtpkjAj_04.jpg",
+  "alt": "Two pilots fly from behind a blue arch on a gym floor field.",
+  "caption": "Competition day",
+  "date": "Jan 2026",
+  "group": "competition",
+  "pos": "50% 60%",
+  "gallery": true
+ },
+ {
+  "id": "g-jan-3",
+  "src": "images/instagram/2026-01-11_DTYWXtpkjAj_06.jpg",
+  "alt": "Members kneel around a controller and laptop on a gym floor.",
+  "caption": "Competition day",
+  "date": "Jan 2026",
+  "group": "competition",
+  "pos": "50% 60%",
+  "gallery": true
+ },
+ {
+  "id": "g-feb",
+  "src": "images/instagram/2026-02-10_DUmLNF7ktuP_01.jpg",
+  "alt": "A practice field laid out with gates and mats in a classroom.",
+  "caption": "Practice",
+  "date": "Feb 2026",
+  "group": "practice",
+  "pos": "50% 60%",
+  "gallery": true
+ },
+ {
+  "id": "g-flight-1",
+  "src": "images/instagram/2026-09-22_DdnG0kbm7IM_01.jpg",
+  "alt": "Four pilots fly beside a pink arch in the classroom.",
+  "caption": "First flights on the new field",
+  "date": "Sept 22, 2026",
+  "group": "practice",
+  "pos": "50% 50%",
+  "gallery": true
+ },
+ {
+  "id": "g-flight-2",
+  "src": "images/instagram/2026-09-22_DdnG0kbm7IM_02.jpg",
+  "alt": "Pilots stand under a pink competition arch holding controllers.",
+  "caption": "Week 4",
+  "date": "Sept 22, 2026",
+  "group": "practice",
+  "pos": "50% 50%",
+  "gallery": true
+ },
+ {
+  "id": "g-gate",
+  "src": "images/instagram/2026-09-22_DdnG0kbm7IM_08.jpg",
+  "alt": "A member steadies a green competition gate on its stand while another looks on.",
+  "caption": "Setting up gates",
+  "date": "Sept 22, 2026",
+  "group": "practice",
+  "pos": "50% 50%",
+  "gallery": true
+ },
+ {
+  "id": "g-code-pair",
+  "src": "images/instagram/2026-09-15_DdVF_oqFHuM_06.jpg",
+  "alt": "Two members work together at a computer during the first coding week.",
+  "caption": "Week 3: first code",
+  "date": "Sept 15, 2026",
+  "group": "practice",
+  "pos": "50% 50%",
+  "gallery": true
+ },
+ {
+  "id": "g-heart",
+  "src": "images/instagram/2026-09-15_DdVF_oqFHuM_01.jpg",
+  "alt": "A member makes a heart with his hands next to a drone and controller at his desk.",
+  "caption": "Week 3",
+  "date": "Sept 15, 2026",
+  "group": "practice",
+  "pos": "50% 50%",
+  "gallery": true
+ },
+ {
+  "id": "g-obstacle",
+  "src": "images/instagram/2026-09-01_DcxMU74lJt4_06.jpg",
+  "alt": "Members sit on stools with controllers, flying in the classroom.",
+  "caption": "Week 2: learning to fly",
+  "date": "Sept 1, 2026",
+  "group": "practice",
+  "pos": "50% 50%",
+  "gallery": true
+ },
+ {
+  "id": "g-new-1",
+  "src": "images/instagram/2026-10-13_DedUHfZm7xt_03.jpg",
+  "alt": "Pilots stand in a line on the teamwork practice field.",
+  "caption": "New members on the teamwork field",
+  "date": "Oct 13, 2026",
+  "group": "practice",
+  "pos": "50% 50%",
+  "gallery": true
+ },
+ {
+  "id": "g-mat",
+  "src": "images/instagram/2026-10-13_DedUHfZm7xt_06.jpg",
+  "alt": "Members kneel on a camouflage mat while laying out field pieces.",
+  "caption": "Laying out the field",
+  "date": "Oct 13, 2026",
+  "group": "practice",
+  "pos": "50% 60%",
+  "gallery": true
+ },
+ {
+  "id": "g-jump",
+  "src": "images/instagram/2026-10-22_De0SiRJmRm6_01.jpg",
+  "alt": "A member jumps for the camera while two teammates give a thumbs-up on the practice field.",
+  "caption": "Week 6",
+  "date": "Oct 22, 2026",
+  "group": "practice",
+  "pos": "50% 40%",
+  "gallery": true
+ },
+ {
+  "id": "g-pilots-3",
+  "src": "images/instagram/2026-10-20_DevGGEvGBMs_03.jpg",
+  "alt": "Three pilots fly from the edge of the practice field.",
+  "caption": "Teamwork group",
+  "date": "Oct 20, 2026",
+  "group": "practice",
+  "pos": "50% 50%",
+  "gallery": true
+ },
+ {
+  "id": "g-gate-close",
+  "src": "images/instagram/2026-10-22_De0SiRJmRm6_04.jpg",
+  "alt": "A pilot with a controller walks past a round target on the practice field.",
+  "caption": "Week 6",
+  "date": "Oct 22, 2026",
+  "group": "practice",
+  "pos": "50% 50%",
+  "gallery": true
+ },
+ {
+  "id": "g-week7",
+  "src": "images/instagram/2026-10-27_DfBHXw_mbOI_02.jpg",
+  "alt": "Members practise in a classroom set up with gates and computers.",
+  "caption": "Week 7",
+  "date": "Oct 27, 2026",
+  "group": "practice",
+  "pos": "50% 50%",
+  "gallery": true
+ },
+ {
+  "id": "g-laughs",
+  "src": "images/instagram/2026-10-27_DfBHXw_mbOI_01.jpg",
+  "alt": "Two members laugh at something on a computer screen.",
+  "caption": "Week 7",
+  "date": "Oct 27, 2026",
+  "group": "practice",
+  "pos": "50% 40%",
+  "gallery": true
+ },
+ {
+  "id": "g-wide",
+  "src": "images/instagram/2026-10-29_DfGUl_qGUEg_04.jpg",
+  "alt": "Pilots stand at the edge of a wide practice field set up in a large room.",
+  "caption": "Week 6, Thursday",
+  "date": "Oct 29, 2026",
+  "group": "practice",
+  "pos": "50% 50%",
+  "gallery": true
+ },
+ {
+  "id": "g-camp-room",
+  "src": "images/instagram/2026-07-27_DbUwu2RlKCj_04.jpg",
+  "alt": "Campers sit facing a practice field set up in a classroom.",
+  "caption": "Summer camp",
+  "date": "July 2026",
+  "group": "camp",
+  "pos": "50% 50%",
+  "gallery": true
+ },
+ {
+  "id": "g-camp-fly",
+  "src": "images/instagram/2026-07-27_DbUwu2RlKCj_06.jpg",
+  "alt": "A camper flies a drone from a computer desk with a controller.",
+  "caption": "Summer camp",
+  "date": "July 2026",
+  "group": "camp",
+  "pos": "50% 50%",
+  "gallery": true
+ },
+ {
+  "id": "g-camp-floor",
+  "src": "images/instagram/2026-07-27_DbUwu2RlKCj_02.jpg",
+  "alt": "Campers sit on the floor of a classroom watching a drone flight.",
+  "caption": "Summer camp",
+  "date": "July 2026",
+  "group": "camp",
+  "pos": "50% 50%",
+  "gallery": true
+ },
+ {
+  "id": "g-intro",
+  "src": "images/instagram/2026-08-25_DcfD3bQG_F__01.jpg",
+  "alt": "Students fill a classroom at the first Aero Ravens meeting of the year.",
+  "caption": "First meeting of the year",
+  "date": "Aug 25, 2026",
+  "group": "camp",
+  "pos": "50% 50%",
+  "gallery": true
+ }
+]
