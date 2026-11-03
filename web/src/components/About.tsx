@@ -34,8 +34,8 @@ export function About() {
               when something breaks.
             </p>
             <p>
-              Outside the season we run a summer camp for younger students, and we've worked with Robolink, the company
-              that makes our drones, testing prototypes and giving feedback on their lessons.
+              Outside the season we run a summer camp for younger students, teaching them the same piloting and coding
+              we learn ourselves.
             </p>
           </div>
 

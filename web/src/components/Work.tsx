@@ -54,16 +54,12 @@ export function Work() {
 
           <article className="wrow wrow--flip">
             <div className="wrow__text">
-              <p className="wrow__n">04 — Teaching & testing</p>
-              <h3>Summer camp, and a day with Robolink</h3>
+              <p className="wrow__n">04 — Teaching</p>
+              <h3>Running a summer camp</h3>
               <p>
                 Every summer we run a camp for rising 7th to 11th graders. Campers learn to fly safely, write autonomous
                 programs in Python, and run them on official competition fields. Camp fees go toward equipment for the
                 next season.
-              </p>
-              <p>
-                During the 2026 camp we also spent an afternoon with Robolink, testing prototype drones and giving
-                feedback on lesson content they were developing.
               </p>
             </div>
             <Figure id="camp-group" n="15" sizes="(max-width: 900px) 100vw, 55vw" className="wrow__fig" />
