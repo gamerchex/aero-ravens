@@ -1,13 +1,13 @@
 // Scroll-in animations. Elements are tagged here (not in the markup) so the page is fully
 // visible if JavaScript is off, and nothing animates for people who prefer reduced motion.
 
-const RULES: { selector: string; kind: 'up' | 'wipe' }[] = [
-  { selector: '.fig', kind: 'wipe' },
+const RULES: { selector: string; kind: 'up' | 'fade' }[] = [
+  { selector: '.fig', kind: 'fade' },
   { selector: '.section .h2', kind: 'up' },
   { selector: '.about__text > p, .result__text, .practice__intro > div > *, .log h3, .camp__text', kind: 'up' },
   { selector: '.join__text > *, .gallery__head p, .filters', kind: 'up' },
   { selector: '.log__list li', kind: 'up' },
-  { selector: '.masonry__item', kind: 'up' },
+  { selector: '.masonry__item', kind: 'fade' },
 ];
 
 export function startReveal() {
