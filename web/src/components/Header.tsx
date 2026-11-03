@@ -3,14 +3,6 @@ import { nav } from '../data/site';
 
 export function Header() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   useEffect(() => {
     document.body.classList.toggle('menu-open', open);
@@ -27,12 +19,11 @@ export function Header() {
   };
 
   return (
-    <header className={`site-header${scrolled ? ' is-scrolled' : ''}${open ? ' is-open' : ''}`}>
+    <header className={`site-header${open ? ' is-open' : ''}`}>
       <div className="site-header__inner">
         <a href="#top" className="brand" onClick={close} aria-label="Aero Ravens, back to top">
-          <img src="/media/logo-150.webp" width="36" height="36" alt="" className="brand__mark" />
+          <img src="/media/logo-150.webp" width="34" height="34" alt="" className="brand__mark" />
           <span className="brand__name">Aero Ravens</span>
-          <span className="brand__tag">CCA · 5951</span>
         </a>
 
         <button
@@ -48,17 +39,16 @@ export function Header() {
 
         <nav id="site-nav" className="site-nav" aria-label="Main">
           <ul>
-            {nav.map((item, i) => (
+            {nav.map((item) => (
               <li key={item.href}>
                 <a href={item.href} onClick={close}>
-                  <span className="site-nav__n" aria-hidden="true">0{i + 1}</span>
                   {item.label}
                 </a>
               </li>
             ))}
           </ul>
           <a href="#join" className="btn btn--red btn--sm" onClick={close}>
-            Join the club
+            Join
           </a>
         </nav>
       </div>

@@ -3,7 +3,7 @@
   "id": "hero-gate",
   "src": "images/aeroravens3.jpeg",
   "alt": "An Aero Ravens member leans in to watch a drone line up with a red Aerial Drone Competition arch on the competition floor.",
-  "caption": "Lining up an arch on the competition floor",
+  "caption": "Lining up an arch",
   "date": "2026 West Aerial Drone HS Championship",
   "group": "competition",
   "pos": "38% 50%"
@@ -21,7 +21,7 @@
   "id": "banner-pilots",
   "src": "images/instagram/2026-09-01_DcxMU74lJt4_03.jpg",
   "alt": "Two members fly drones from their seats under a banner reading High School West Region Skills Missions Champion.",
-  "caption": "Week 2, under last year's banner",
+  "caption": "Week 2, under the 2025 skills banner",
   "date": "Sept 1, 2026",
   "group": "practice",
   "pos": "14% 50%"
@@ -30,7 +30,7 @@
   "id": "team-flag",
   "src": "images/instagram/2026-05-01_DX0hJAcFK5q_03.jpg",
   "alt": "Six Aero Ravens members hold a red Canyon Crest Academy Ravens flag in the competition hall.",
-  "caption": "Teams 5951A and 5951B",
+  "caption": "With the school flag",
   "date": "2026 West Aerial Drone HS Championship",
   "group": "competition",
   "pos": "50% 55%"
@@ -48,7 +48,7 @@
   "id": "team-backs",
   "src": "images/instagram/2026-05-01_DX0g6ihFI5d_02.jpg",
   "alt": "Team members seen from behind in matching black shirts printed 5951 Aero Ravens.",
-  "caption": "5951 on every back",
+  "caption": "Teams 5951A and 5951B",
   "date": "2026 West Aerial Drone HS Championship",
   "group": "competition",
   "pos": "50% 50%"
@@ -66,7 +66,7 @@
   "id": "comp-pits",
   "src": "images/aeroravens2.jpeg",
   "alt": "Three members crowd around a laptop at the team's table in a busy competition hall.",
-  "caption": "Last-minute code in the pits",
+  "caption": "In the pits",
   "date": "2026 West Aerial Drone HS Championship",
   "group": "competition",
   "pos": "45% 50%"
@@ -106,13 +106,13 @@
   "caption": "Teamwork practice",
   "date": "Oct 15, 2026",
   "group": "practice",
-  "pos": "50% 55%"
+  "pos": "50% 28%"
  },
  {
   "id": "coding-screen",
   "src": "images/instagram/2026-10-15_Deigo-uG8jy_03.jpg",
   "alt": "Over the shoulder of a member writing a flight program on a desktop computer.",
-  "caption": "Autonomous group, working on code",
+  "caption": "Autonomous group",
   "date": "Oct 15, 2026",
   "group": "practice",
   "pos": "55% 45%"
@@ -121,7 +121,7 @@
   "id": "landing-pad",
   "src": "images/instagram/2026-10-22_De0SiRJmRm6_03.jpg",
   "alt": "A small drone sits on a red landing pad on a camouflage practice mat, with taped lanes and field pieces around it.",
-  "caption": "Practice field, close up",
+  "caption": "Practice field",
   "date": "Oct 22, 2026",
   "group": "practice",
   "pos": "50% 70%"
@@ -130,7 +130,7 @@
   "id": "field-carry",
   "src": "images/instagram/2026-09-22_DdnG0kbm7IM_05.jpg",
   "alt": "Members carry long field pieces across the classroom while setting up a practice field.",
-  "caption": "Moving the field",
+  "caption": "Setting up the field",
   "date": "Sept 22, 2026",
   "group": "practice",
   "pos": "50% 50%"

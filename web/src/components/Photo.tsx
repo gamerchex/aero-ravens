@@ -59,26 +59,27 @@ export function Photo({ id, sizes, className, eager }: Props) {
   );
 }
 
-/** Photo with an engineering-drawing style caption underneath. */
+/** Photo with a short caption underneath. */
 export function Figure({
   id,
-  n,
   sizes,
   className,
   eager,
   showDate = true,
-}: Props & { n: string; showDate?: boolean }) {
+  caption = true,
+}: Props & { showDate?: boolean; caption?: boolean }) {
   const p = getPhoto(id);
   return (
     <figure className={`fig ${className ?? ''}`}>
       <div className="fig__frame">
         <Photo id={id} sizes={sizes} eager={eager} />
       </div>
-      <figcaption className="fig__cap">
-        <span className="fig__n">Fig. {n}</span>
-        <span>{p.caption}</span>
-        {showDate && <span className="fig__date">{p.date}</span>}
-      </figcaption>
+      {caption && (
+        <figcaption className="fig__cap">
+          {p.caption}
+          {showDate && <span className="fig__date">, {p.date}</span>}
+        </figcaption>
+      )}
     </figure>
   );
 }

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { photos, Photo, photoSources, type PhotoGroup } from './Photo';
-import { SectionHead } from './SectionHead';
+import { links } from '../data/site';
 
 const filters: { key: 'all' | PhotoGroup; label: string }[] = [
   { key: 'all', label: 'All' },
@@ -86,14 +86,20 @@ export function Gallery() {
   const big = current ? photoSources(current.id) : null;
 
   return (
-    <section className="section section--ink gallery" aria-labelledby="gallery-title" id="gallery">
+    <section className="section section--ink gallery" aria-labelledby="gallery-title" id="photos">
       <div className="wrap">
-        <SectionHead n="04" label="Gallery" title="Photos, mostly off our phones." id="gallery-title">
+        <div className="gallery__head">
+          <h2 id="gallery-title" className="h2">
+            Photos
+          </h2>
           <p>
-            Practices, competitions and camp, from the last two seasons. Tap any photo for a closer look. More on{' '}
-            <a href="https://www.instagram.com/cca.aero.ravens/">Instagram</a>.
+            Practices, competitions and camp from the last two seasons. There are more on{' '}
+            <a href={links.instagram} target="_blank" rel="noopener noreferrer">
+              Instagram
+            </a>
+            .
           </p>
-        </SectionHead>
+        </div>
 
         <div className="filters" role="group" aria-label="Filter photos">
           {filters.map((f) => (
@@ -121,11 +127,7 @@ export function Gallery() {
             <li key={p.id} className="masonry__item">
               <button type="button" className="masonry__btn" onClick={(e) => open(i, e.currentTarget)}>
                 <Photo id={p.id} sizes="(max-width: 600px) 50vw, (max-width: 1000px) 33vw, 25vw" />
-                <span className="masonry__cap">
-                  {p.caption}
-                  <span>{p.date}</span>
-                </span>
-                <span className="visually-hidden">Open larger view</span>
+                <span className="visually-hidden">Open larger view: {p.caption}</span>
               </button>
             </li>
           ))}
@@ -163,10 +165,10 @@ export function Gallery() {
             />
             <div className="lightbox__bar">
               <p className="lightbox__cap">
-                <span className="fig__n">
+                <span className="lightbox__count">
                   {String((active ?? 0) + 1).padStart(2, '0')} / {String(items.length).padStart(2, '0')}
                 </span>
-                {current.caption} <span className="fig__date">{current.date}</span>
+                {current.caption} <span className="lightbox__date">{current.date}</span>
               </p>
               <div className="lightbox__ctrl">
                 <button type="button" onClick={() => step(-1)} aria-label="Previous photo">
